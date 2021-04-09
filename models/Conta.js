@@ -2,18 +2,12 @@ import { Cliente } from "./Cliente.js";
 
 export class Conta {
 
-    static numeroContas = 0;
-
-    constructor(cliente, saldo){
-        this.cliente = cliente;
-        this.deposito(saldo);
-
-        Conta.numeroContas +=1;
+    constructor(saldo, cliente, agencia){
+        this._cliente = cliente;
+        this._saldo = saldo;
+        this._agencia = agencia;
     }
     
-    _saldo = 0;
-    _cliente = null;
-
     set cliente(cliente){
         if(cliente instanceof Cliente){
             this._cliente = cliente;
